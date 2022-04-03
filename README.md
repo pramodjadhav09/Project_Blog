@@ -1,11 +1,5 @@
 # blog_project-
 
-### Members-
-
-1. Shabdika Pandey
-2. S Tujliman
-3. Pramod Jadhav
-4. Rahul Hedau
 
 ## Blogging Site Mini Project Requirement
 ## Phase I
