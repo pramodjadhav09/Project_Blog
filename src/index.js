@@ -1,17 +1,18 @@
 const express = require('express');
-const bodyParser = require('body-parser');
-const route = require('./route/route.js');
-const { default: mongoose } = require('mongoose');
 const app = express();
+const bodyParser = require('body-parser');
+const route = require('./routes/route.js');
+const { default: mongoose } = require('mongoose');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb+srv://amir-thorium:NSE7ZdUlu4no9WRF@cluster0.gchuo.mongodb.net/Book-Management-DataBase?authSource=admin&replicaSet=atlas-cw2o95-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true", {
+
+mongoose.connect("mongodb+srv://Pramod09:Pramod%4010@pramod09.i3td2.mongodb.net/pramod09-db", {
     useNewUrlParser: true
 })
-    .then(() => console.log("MongoDb is connected"))
-    .catch(err => console.log(err))
+.then( () => console.log("MongoDb is connected"))
+.catch ( err => console.log(err) )
 
 app.use('/', route);
 
