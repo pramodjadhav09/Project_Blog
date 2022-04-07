@@ -8,8 +8,8 @@ const authentication=async function (req,res,next) {
             return res.send("token is not present")
         }
         else {
-            let decodedtoken= jwt.verify(token, "tujliman")
-            console.log(decodedtoken.authorId)
+            let decodedtoken= jwt.verify(token, "secret key")
+            //console.log(decodedtoken.authorId)
             if (!decodedtoken) return res.status(401).send({status: false, msg: "token is invalid"})
             next();
         }
@@ -29,7 +29,7 @@ const authorization=async function (req,res,next) {
             return res.status(404).send("token is not correct");
         }
 
-        let decodeToken = jwt.verify(token,"tujliman")
+        let decodeToken = jwt.verify(token,"secret key")
         let aID= req.query.authorId;
         let dID = decodeToken.authorId;
         if(aID != dID){

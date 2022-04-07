@@ -37,7 +37,7 @@ const login=async function(req,res){
 
         let token = jwt.sign({
             authorId:author._id.toString()
-        },"tujliman");
+        },"secret key");
         res.setHeader("x-api-key",token)
 
         res.status(200).send({status:true,message:"author logged in",token:token})
